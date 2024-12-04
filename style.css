@@ -1,25 +1,80 @@
-main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    background-color: orange;
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: burlywood;
 }
-main > div {
-    background-color: chartreuse;
-    color: blue;
-    height: 150px;
-    text-align: center;
-    line-height: 150px;
-    font-size: 20px;
+.container {
+  height: 100vh;
+  color: black;
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main main main"
+    "sidebar box1 box2 box3"
+    "sidebar box4 box5 box6"
+    "footer footer footer footer";
+  grid-gap: 0.6rem;
+  text-align: center;
+  font-size: 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.7fr 2fr 1fr 1fr 0.7fr;
+}
 
+header {
+  background-color: aqua;
+  grid-area: header;
 }
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.main {
+  background-color: rgb(68, 222, 41);
+  grid-area: main;
 }
-@media (max-width: 480px) {
-    main {
-        grid-template-columns: repeat(1, 1fr);
-    }
+.sidebar {
+  background-color: yellow;
+  grid-area: sidebar;
+}
+.box1 {
+  background-color: blue;
+  grid-area: box1;
+}
+.box2 {
+  background-color: red;
+  grid-area: box2;
+}
+.box3 {
+  background-color: yellow;
+  grid-area: box3;
+}
+.box4 {
+  background-color: violet;
+  grid-area: box4;
+}
+.box5 {
+  background-color: orangered;
+  grid-area: box5;
+}
+.box6 {
+  background-color: darkmagenta;
+  grid-area: box6;
+}
+footer {
+  background-color: yellowgreen;
+  grid-area: footer;
+}
+@media (max-width: 430px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 1.8fr 0.7fr 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr 0.8fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "box1"
+      "box2"
+      "box3"
+      "box4"
+      "box5"
+      "box6"
+      "footer";
+  }
 }
